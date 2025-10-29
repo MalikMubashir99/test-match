@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 on JQuery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">Add Task</h1>
+    <br><br>
+    <center>
+        <input type="text" id="taskadd" placeholder="Add Task Here"
+            style="padding: 10px; width: 300px; border-radius: 5px; border: 2px solid black;"> _-_
+        <button id="addbtn" style="padding: 10px; border-radius: 5px; border: 2px solid black;">Add Task</button>
+        <br><br>
+        <ul class="tasklis"></ul>
+    </center>
+    <script>
+        $(function () {
+            $("#addbtn").dblclick(function () {
+                let task = $("#taskadd").val();
+                let delbtn = "<button class='dbtn'>❌</button>";
+                if (task !== "") {
+                    $(".tasklis").append("<li>" + task + delbtn + "</li>");
+                    $("#taskadd").val("");
+                }
+                else {
+                    alert("Please enter a task!");
+                }
+                $(".dbtn").dblclick(function () {
+                    $(this).parent().remove();
+                    alert("Task Deleted Successfully!");
+                });
+            });
+        })
+    </script>
+
+
+
+</body>
+
+</html>

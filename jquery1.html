@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggeling using Jquery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>Toggling using Jquery</h1>
+    
+    <br>
+
+    <button class="Data">Click</button>
+
+    <br><br>
+    <center>
+        <div class="para">
+
+        </div>
+    </center>
+
+    <script>
+       $(function(){
+        $(".Data").click(function(){
+            $(".para").slideToggle("slow",function(){
+                if($(".para").is(":visible")){
+                    $(".para").html("This is toggling using Jquery");
+                }
+                else{
+                    $(".para").html("");
+                }
+            })
+        })
+       })
+    </script>
+    
+</body>
+</html>
